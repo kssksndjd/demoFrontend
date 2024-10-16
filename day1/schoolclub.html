@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>After School Club</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <style>
+
+
+
+    .lesson-card {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      max-width: 400px;
+
+    }
+
+    .lesson-info {
+      text-align: left;
+      margin-left: 20px;
+    }
+
+   
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>After School Club</h1>
+    <div class="lesson-card">
+      <div class="lesson-image">
+        <img :src="lesson.imagePath" :alt="lesson.imageAlt" />
+      </div>
+      <div class="lesson-info">
+        <h2>{{ lesson.subject }}</h2>
+        <p>{{ lesson.location }}</p>
+        <p>Price: {{ lesson.price }}</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        lesson: {
+          subject: "Math",
+          location: "London",
+          price: 100,
+          imagePath: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKSZZs7eNHdUyzM-RsMLcHKxGUJP4NZf6YJQ&s", 
+          imageAlt: "Math lesson icon"
+        }
+      }
+    });
+  </script>
+</body>
+</html>

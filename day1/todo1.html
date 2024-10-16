@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todo</title>
+</head>
+<body>
+    <h1>My Todo List</h1>
+    <input type ="text" id ="newTask">
+    <input type ="button" value="add" id="addButton">
+   
+    <ul id ="taskList">
+        <li>task 1</li>
+        <li>task 2</li>
+        <li>task 3</li>
+    </ul>
+
+    <script>
+        let addButton = document.getElementById("addButton");
+        let taskList = document.getElementById("taskList");
+        addButton.onclick = function(){
+            let taskField = document.getElementById("newTask");
+            let taskItem = document.createElement("li");
+            taskItem.innerText = taskField.value;
+            taskList.appendChild(taskItem);
+            taskField.value="";
+        }
+    </script>
+    
+</body>
+</html>

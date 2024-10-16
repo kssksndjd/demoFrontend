@@ -70,7 +70,7 @@
       <h2 class="mt-5">Shopping Cart</h2>
       <ul class="list-group mb-4">
         <li v-for="item in cart" class="list-group-item">
-          <i class="fas fa-chalkboard-teacher"></i> <!-- Font Awesome Icon in Cart -->
+          <i class="fas fa-chalkboard-teacher"></i> 
           {{ item.subject }} - ${{ item.price }} ({{ item.location }})
           <button class="btn btn-danger btn-sm float-right" @click="removeFromCart(item)">Remove</button>
         </li>

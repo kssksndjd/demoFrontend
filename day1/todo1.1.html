@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todo</title>
+</head>
+<body>
+    <h1>My Todo List</h1>
+    <input type ="text" id ="newTask">
+    <input type ="button" value="add" id="addButton">
+
+    <ul id ="taskList"></ul>
+
+    <script>
+        let addButton = document.getElementById("addButton");
+        let tasks = ["task 1", "task 2", "task 3"];
+        function loadTask(){
+            let taskList = document.getElementById("taskList");
+            taskList.innerHTML = ''
+            tasks.forEach((task, index) => {
+                const li = document.createElement('li');
+                li.textContent = task;
+                taskList.appendChild(li);
+            });
+        }
+        loadTask()
+        addButton.onclick = function(){
+            let taskField = document.getElementById("newTask");
+            let taskItem = document.createElement("li");
+            taskItem = taskField.value;
+            tasks.push(taskItem);
+            taskField.value="";
+            loadTask()
+        }
+    </script>
+    
+</body>
+</html>
